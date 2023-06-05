@@ -1,0 +1,14 @@
+﻿{
+  "Descriptor": {
+    "UId": "9ff03ace-cb48-412f-8a09-1c2a9aa3fb47",
+    "Name": "AvtDocuSignLog",
+    "ModifiedOnUtc": "\/Date(1685090641000)\/",
+    "Parent": {
+      "UId": "1bab9dcf-17d5-49f8-9536-8e0064f1dce0",
+      "Name": "BaseEntity"
+    },
+    "ManagerName": "EntitySchemaManager",
+    "Caption": "Docu Sign Log",
+    "DependsOn": []
+  }
+}

@@ -1,0 +1,25 @@
+﻿{
+  "Descriptor": {
+    "UId": "e3daa59a-74dd-4046-9208-354982630ca1",
+    "Name": "Avt.DocuSignLib",
+    "ModifiedOnUtc": "\/Date(1681055926000)\/",
+    "Maintainer": "Customer",
+    "DependsOn": [
+      {
+        "UId": "5be3998b-c5c3-42bb-a01c-2e4149059a97",
+        "PackageVersion": "7.8.0",
+        "Name": "Base"
+      },
+      {
+        "UId": "613fd913-be03-46ce-909b-f44e4225469e",
+        "PackageVersion": "7.8.0",
+        "Name": "UIv2"
+      },
+      {
+        "UId": "a7d9c356-450c-46d7-bc85-72dca4e280ba",
+        "PackageVersion": "7.8.0",
+        "Name": "NUI"
+      }
+    ]
+  }
+}
