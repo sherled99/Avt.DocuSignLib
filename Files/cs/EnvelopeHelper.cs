@@ -187,8 +187,10 @@ namespace Avt.DocuSignLib.Files.cs
             }
             var schemaProcess = UserConnection.AppConnection.SystemUserConnection.EntitySchemaManager.GetInstanceByName(envelopeAttachment.AvtSysModuleSchemaName + "File");
             var entityProcess = schemaProcess.CreateEntity(UserConnection);
-            entityProcess.SetDefColumnValues();
-            entityProcess.SetColumnValue("Name", document.Name);
+            entityProcess.SetDefColumnValues(); 
+            string currentDateString = DateTime.Now.ToString("dd.MM.yyyy");
+            string modifiedName = $"{document.Name}_DocuSign_{currentDateString}";
+            entityProcess.SetColumnValue("Name", modifiedName);
             entityProcess.SetColumnValue("TypeId", Guid.Parse("529bc2f8-0ee0-df11-971b-001d60e938c6")); // File
             entityProcess.SetColumnValue(envelopeAttachment.AvtSysModuleSchemaName + "Id", envelopeAttachment.AvtRecordId);
             entityProcess.SetColumnValue("Uploaded", true);
@@ -198,7 +200,7 @@ namespace Avt.DocuSignLib.Files.cs
             entityProcess.SetColumnValue("Data", docStream.ToArray());
             entityProcess.Save(false);
 
-            CreateAvtDocuSignAttachment(envelopeAttachment, entityProcess.PrimaryColumnValue, document.Name);
+            CreateAvtDocuSignAttachment(envelopeAttachment, entityProcess.PrimaryColumnValue, modifiedName);
         }
 
         private void CreateAvtDocuSignAttachment(AvtEnvelopeAttachment envelopeAttachment, Guid recordId, string documentName)
